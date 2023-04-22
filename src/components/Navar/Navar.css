@@ -1,0 +1,40 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'OpenSans', sans-serif;
+}
+.Navar {
+  border: 1px solid black;
+  background-color: azure;
+  padding: 1rem;
+  float: left;
+  width: 100%;
+}
+
+.Navar button {
+  margin-left: 1rem;
+  padding: 1rem;
+  border: transparent;
+  border-radius: 0.5rem;
+  
+}
+
+.Buttons {
+  border: 1px solid black;
+  float: right;
+
+  
+  
+  
+
+}
+
+.logo {
+  border: 1px solid black;
+  float: left;
+
+
+  
+}
