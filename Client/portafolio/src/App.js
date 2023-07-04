@@ -1,22 +1,26 @@
 
 import './App.css';
+import { Routes, Route } from "react-router-dom";
+import LandingPage from "../src/Components/LandingPage/LandingPage";
+import Navbar from "../src/Components/Navbar/Navbar";
+import Footer from "../src/Components/Pie/PiePagina";
+import Contact from "../src/Components/Contacto/Contact";
+import ProyectosForm from "../src/Components/PanelProyect/PanelProyect";
+import Proyectos from "../src/Components/Proyectos/Proyectos";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-         Portafolio En proceso de Juan Daniel Levano Ruiz 
-        </p>
-        <a
-          className="App-link"
-                  href="https://github.com/JuanDanielRuiz/Portafolio"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Link de Git Hub
-        </a>
-      </header>
+      <div>
+          <Navbar/>
+          <Routes>
+              <Route path="/" element={<LandingPage />} />
+              <Route path="/contacto" element={<Contact />} />
+              <Route path="/admin/proyect" element={<ProyectosForm />} />
+              <Route path="/proyectos" element={<Proyectos />} />
+          </Routes>
+          <Footer/>
+     
     </div>
   );
 }

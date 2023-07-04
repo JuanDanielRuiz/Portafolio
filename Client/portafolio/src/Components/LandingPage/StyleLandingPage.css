@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box
+    
+}
+
+body {
+    font-family: "Montserrat",sans-serif;
+}
+
+.container-landing {
+    width: 100vw;
+    height: 100vh;
+    background-color: #374259;
+    color: #fff
+}
+.navbar {
+    display:flex;
+    justify-content:space-between;
+    padding:2rem;
+       
+}
+
+.brand span {
+    color:aqua
+}
+.menu {
+    display:flex;
+    width:50%;
+    justify-content:space-around
+}
+.menu li {
+    list-style:none
+}
+.menu a {
+    color:#fff;
+    text-decoration:none;
+    padding:10px 20px;
+}
+
+.menu .active {
+    color:aqua
+}
+
+    .menu a:hover {
+        background-color: #0096FF;
+        border-radius: 2rem;
+        color: #41444B;
+        transition: ease-in .4s;
+    }
+
+    .main {
+        margin:0 auto;
+        width:80vw;
+        height:50vh;
+        display:grid;
+        grid-template-columns: repeat(2,1fr);
+        align-items:center;
+       
+
+    }
+
+.info-content {
+    margin-left: 15rem;
+}
+.info-content h1 {
+    font-size: 4em;
+    
+}
+.info-content span {
+    color: aqua;
+}
+
+.main img {
+    width: 18rem;
+    height: 16rem;
+    border:6px solid #332FD0;
+    margin-left:10rem;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    border-end-start-radius: 3rem;
+    border-end-end-radius:3rem;
+}
+
+.download-cv {
+    padding: 10px 20px;
+    background-color: aqua;
+    border: none;
+    border-radius: 20px;
+    margin-top: 15px;
+    cursor: pointer;
+    box-shadow: 1px 3px 11px -5px #332FD0;
+}
+
+  .download-cv:hover{
+      background-color:#fff;
+      box-shadow:none;
+  }
+
+.backend-img img {
+    width: 66rem;
+    height: 20rem;
+    border: 6px solid #068DA9;
+    margin: auto;
+    display: flex;
+    border-radius:2rem;
+}

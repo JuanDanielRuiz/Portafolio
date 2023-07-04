@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box
+    
+}
+
+body {
+    font-family: "Montserrat",sans-serif;
+}
+
+
+.container-Proyectos {
+    background-color: #374259;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+   
+
+    .proyecto-card {
+        margin-top: 2rem;
+        width: 14%;
+        margin: 1%;
+        padding: 1rem;
+        background-color: #ffffff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+.proyecto-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    text-align:center
+}
+
+.proyecto-description {
+    margin-bottom: 1rem;
+    text-align: center
+}
+
+.proyecto-img {
+    width: 15rem;
+    height: 15rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+}
+.proyecto-card a {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+.proyecto-linkedin,
+.proyecto-repo {
+    margin-right: 0.5rem;
+    color: #ffffff;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 2rem;
+    background-color: #98c7c0;
+    padding: 0.5rem 1rem;
+    margin: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    transition: background-color 0.3s ease;
+    margin-right:1rem;
+    
+}
+
+    .proyecto-linkedin:hover,
+    .proyecto-repo:hover {
+        background-color: #72a5a0;
+        text-decoration: none;
+    }

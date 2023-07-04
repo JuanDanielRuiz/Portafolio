@@ -1,7 +1,12 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Backend\\src",
+    "\\Backend\\src\\models",
+    "\\Backend\\src\\routes",
+    "\\Client\\portafolio",
+    "\\Client\\portafolio\\src"
   ],
-  "SelectedNode": "\\C:\\Users\\Dany\\Desktop\\Portafolio",
+  "SelectedNode": "\\README.md",
   "PreviewInSolutionExplorer": false
 }
