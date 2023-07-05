@@ -1,12 +1,13 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Backend\\src",
-    "\\Backend\\src\\models",
-    "\\Backend\\src\\routes",
+    "\\Client",
     "\\Client\\portafolio",
-    "\\Client\\portafolio\\src"
+    "\\Client\\portafolio\\src",
+    "\\Client\\portafolio\\src\\Components",
+    "\\Client\\portafolio\\src\\Components\\PanelProyect",
+    "\\Client\\portafolio\\src\\Components\\Proyectos"
   ],
-  "SelectedNode": "\\README.md",
+  "SelectedNode": "\\Client\\portafolio\\src\\Components\\PanelProyect\\PanelProyect.jsx",
   "PreviewInSolutionExplorer": false
 }
