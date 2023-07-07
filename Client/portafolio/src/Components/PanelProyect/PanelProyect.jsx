@@ -10,7 +10,7 @@ const ProyectosForm = () => {
         // Función para realizar la petición
         const fetchData = async () => {
             try {
-                const response = await axios.get('http://localhost:3001/CreateProyect/allData');
+                const response = await axios.get('http://localhost:8000/CreateProyect/allData');
                 setData(response.data);
             } catch (error) {
                 console.error(error);
@@ -22,7 +22,7 @@ const ProyectosForm = () => {
     const handlerDeleteProyect = (id) => {
         try {
             axios
-                .delete(`http://localhost:3001/deleteProyect/delete/${id}`)
+                .delete(`http://localhost:8000/deleteProyect/delete/${id}`)
                 .then();
            
             const updatedData = data.filter((item) => item.id !== id);
@@ -52,7 +52,7 @@ const ProyectosForm = () => {
             linkedin: proyectoData.linkedin
         };
 
-        await axios.post('http://localhost:3001/CreateProyect/data', Nuevoproyecto);
+        await axios.post('http://localhost:8000/CreateProyect/data', Nuevoproyecto);
       
         setProyectoData({
             name: "",

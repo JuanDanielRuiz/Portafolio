@@ -13,7 +13,7 @@ const Proyectos = () => {
         // Función para realizar la petición
         const fetchData = async () => {
             try {
-                const response = await axios.get('http://localhost:3001/CreateProyect/allData');
+                const response = await axios.get('http://localhost:8000/CreateProyect/allData');
                 setData(response.data);
             } catch (error) {
                 console.error(error);

@@ -4,13 +4,27 @@ const fs = require('fs');
 const path = require('path');
 const { DB_USER, DB_PASSWORD, DB_HOST } = process.env;
 
-const sequelize = new Sequelize(
-    `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/portafolio`,
-    {
-        logging: false, // set to console.log to see the raw SQL queries
-        native: false, // lets Sequelize know we can use pg-native for ~30% more speed
-    }
-);
+const sequelize = new Sequelize({
+    database: process.env.PGDATABASE,
+    dialect: process.env.DB_USER,
+    host: process.env.PGHOST,
+    port: process.env.PGPORT,
+    username: process.env.DB_USER,
+    password: process.env.PGPASSWORD,
+    pool: {
+        max: 3,
+        min: 1,
+        idle: 10000,
+    },
+    dialectOptions: {
+        ssl: {
+            require: true,
+            rejectUnauthorized: false,
+        },
+        keepAlive: true,
+    },
+    ssl: true,
+});
 const basename = path.basename(__filename);
 
 const modelDefiners = [];
@@ -39,7 +53,7 @@ sequelize.models = Object.fromEntries(capsEntries);
 
 // En sequelize.models están todos los modelos importados como propiedades
 // Para relacionarlos hacemos un destructuring
-const { User, Task, Proyectos } = sequelize.models;
+const { User, Task, Proyectos, Emails } = sequelize.models;
 
 
 // Aca vendrian las relaciones
@@ -52,6 +66,9 @@ Proyectos.belongsTo(User, { foreignKey: 'userId' });
 
 Task.hasMany(Proyectos, { foreignKey: 'taskId' });
 Proyectos.belongsTo(Task, { foreignKey: 'taskId' });
+
+User.hasMany(Emails, { foreignKey: 'emailId' });
+Emails.belongsTo(User, { foreignKey: 'emailId' });
 
 
 module.exports = {

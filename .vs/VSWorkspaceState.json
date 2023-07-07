@@ -5,9 +5,12 @@
     "\\Client\\portafolio",
     "\\Client\\portafolio\\src",
     "\\Client\\portafolio\\src\\Components",
+    "\\Client\\portafolio\\src\\Components\\Contacto\\img",
+    "\\Client\\portafolio\\src\\Components\\LandingPage\\img",
     "\\Client\\portafolio\\src\\Components\\PanelProyect",
+    "\\Client\\portafolio\\src\\Components\\PanelProyect\\img",
     "\\Client\\portafolio\\src\\Components\\Proyectos"
   ],
-  "SelectedNode": "\\Client\\portafolio\\src\\Components\\PanelProyect\\PanelProyect.jsx",
+  "SelectedNode": "\\Client\\portafolio\\src\\Components\\Proyectos\\Proyectos.jsx",
   "PreviewInSolutionExplorer": false
 }

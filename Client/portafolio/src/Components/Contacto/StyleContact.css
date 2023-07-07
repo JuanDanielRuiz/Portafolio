@@ -14,10 +14,14 @@ body {
     justify-content: center;
     height: 100vh;
 }
+.container-Contact h2 {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size:28px;
+    text-align:center
+}
 
-.form {
-    
-    width: 400px;
+.container-Contact form {
+    width: 30rem;
     margin: 0 auto;
     padding: 20px;
     background-color: #ffffff;
@@ -26,17 +30,16 @@ body {
     background-image: url('https://th.bing.com/th/id/R.6c451bd0d1a0f6281444e5bf88b367c3?rik=GNkQd1jshS19vA&pid=ImgRaw&r=0');
     background-size: cover;
     background-position: center;
-    height: 530px;
+    height: auto;
     border: .4rem solid #007bff;
-    border-end-start-radius:2rem;
-    border-start-start-radius:3rem;
-
-
+    border-end-start-radius: 2rem;
+    border-start-start-radius: 3rem;
+    margin-top:40px
 }
 
-    .form div {
-        margin-bottom: 20px;
-    }
+.container-Contact form div {
+    margin-bottom: 20px;
+}
 
 label {
     display: block;

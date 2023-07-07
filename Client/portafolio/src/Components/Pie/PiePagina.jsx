@@ -1,15 +1,32 @@
 import './StylePiePagina.css'
+import facebook from './icons/facebook-icon-logo-svgrepo-com.svg'
+import instagram from './icons/icons8-instagram.gif'
+import linkedin from './icons/icons8-linkedin-circled.gif'
+import github from './icons/icons8-github (1).gif'
+
 
 const Footer = () => {
     return (
        
             <footer > 
                 <div class="container-footer">
-                    <div class="social-icons">
-                    <a href="https://github.com/JuanDanielRuiz" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://www.facebook.com/profile.php?id=100093584599138&sk=about_work_and_education" target="_blank"><i class="fab fa-facebook"></i></a>
-                    <a href="https://www.instagram.com/danielruizdeveloper/" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="daniel.luevanoui@uanl.edu.mx"><i class="fas fa-envelope"></i></a>
+                <div class="social-icons">
+                    <div class="icons-footer">
+                        <a href="https://github.com/JuanDanielRuiz">
+                            <img src={github} alt="Imagen de presentacion de Danny Ruiz"></img>
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=100093584599138&sk=about_work_and_education">
+                            <img src={facebook} alt="Imagen de presentacion de Danny Ruiz"></img>
+                        </a>
+                        <a href="https://www.instagram.com/danielruizdeveloper/">
+                            <img src={instagram} alt="Imagen de presentacion de Danny Ruiz"></img>
+                        </a>
+                        <a href="https://www.linkedin.com/in/danny-ruiz-9b7a24175/">
+                            <img src={linkedin} alt="Imagen de presentacion de Danny Ruiz"></img>
+                        </a>
+                    </div>
+
+                  
                     </div>
                 <div class="bio">
                     <h2>Soy Juan Daniel Luevano Ruiz,</h2>

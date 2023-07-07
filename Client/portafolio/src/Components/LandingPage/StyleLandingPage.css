@@ -1,27 +1,84 @@
 .landing {
     background-color: #374259;
-    display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 5%;
+    height: 45rem;
+    flex-direction: row;
+    display: flex;
+    min-height: 100vh;
+}
+.tecnology {
+    background-color: #374259;
+   
+    
+}
+.icons {
+    background-color: #374259;
+    display: flex;
+    justify-content:center;
+   
+    
+}
+    .icons img {
+        width: 60px;
+        margin: 10px;
+        display: flex;
+        background-color: transparent;
+    }
+
+.tecnology img {
+    border: 1px solid transparent;
+    box-shadow: 0 0 1px #AAC4FF, 0 0 3px #AAC4FF, 0 0 1px #00ff00, 0 0 10px #AAC4FF, 0 0 25px #AAC4FF, 0 0 40px #AAC4FF, 0 0 20px #AAC4FF, 0 0 35px #AAC4FF;
+    animation: neon-glow 1s ease-in-out infinite;
+    width: 25rem;
+    margin: auto;
+    display: block;
+    border-radius: 2rem;
 }
 
-.inf {
-    width: 100%;
-    padding: 1%;
+@keyframes neon-glow {
+    0% {
+        box-shadow: 0 0 5px #AAC4FF, 0 0 10px #AAC4FF, 0 0 15px #AAC4FF, 0 0 20px #AAC4FF, 0 0 35px #AAC4FF, 0 0 40px #AAC4FF, 0 0 50px #AAC4FF, 0 0 75px #AAC4FF;
+    }
+
+    50% {
+        box-shadow: 0 0 10px #AAC4FF, 0 0 20px #AAC4FF, 0 0 30px #AAC4FF, 0 0 40px #AAC4FF, 0 0 70px #AAC4FF, 0 0 80px #AAC4FF, 0 0 100px #AAC4FF, 0 0 150px #AAC4FF;
+    }
+
+    100% {
+        box-shadow: 0 0 5px #AAC4FF, 0 0 10px #AAC4FF, 0 0 15px #AAC4FF, 0 0 20px #AAC4FF, 0 0 35px #AAC4FF, 0 0 40px #AAC4FF, 0 0 50px #AAC4FF, 0 0 75px #AAC4FF;
+    }
+}
+
+.tecnology h2 {
+    text-align: center;
+    font-size: 60px;
+    font-family: fantasy
+}
+    
+.info h1 {
+    margin-top: 2rem
+}
+.info {
+    width: 50%;
+    height:40%;
     text-align: center;
     color: black;
-    margin-left: 7rem;
-    font-family: Gadugi, sans-serif; 
+    margin-top: 10px;
+    font-family:cursive, sans-serif;
+    font-size:20px;
     background-color: #2E8A99;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     line-height: 1.5;
+    margin-left:10rem
+
+
+  
 }
-.inf span {
-    color:aquamarine
-}
+    .info span {
+        color: aquamarine
+    }
 .download-cv {
     background-color: #4FC0D0;
     border-radius: 10px;
@@ -41,10 +98,9 @@
 
 .photo {
     display: flex;
-    justify-content: center;
-    margin-right: 3rem;
     position: relative; 
     overflow: hidden; 
+    margin-left:8rem
 }
 
     .photo img {
@@ -60,16 +116,30 @@
     
     .photo:hover img {
         transform: rotateY(180deg);
-        transition:ease-in 2s
+        transition:ease-in 5s;
+        border:solid 5px red
+    }
+.ciberseguridad {
+    background-color: #374259;
+   
+   
+}
+    .ciberseguridad h2 {
+        text-align: center;
+        font-size: 50px;
+        font-family: 'Global User Interface'
+    }
+    .ciberseguridad p {
+        text-align: left;
+        font-size: 25px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        margin-left:5rem
     }
 
-  
-
-.backend {
-    padding: 2%;
-    height:19rem;
-    width:70rem;
-    display:flex;
-    margin:auto
-
-}
+    .ciberseguridad  li {
+        margin-left:5rem;
+        text-align:left;
+        font-size: 19px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        color:antiquewhite
+    }

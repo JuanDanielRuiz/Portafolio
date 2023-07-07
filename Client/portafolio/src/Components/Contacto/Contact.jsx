@@ -1,5 +1,6 @@
 import './StyleContact.css'
 import { useState } from "react";
+import axios from 'axios'
 
 
 
@@ -13,7 +14,7 @@ const Contact = () => {
 
 
     });
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         const NuevoEmail = {
             nombre: userData.nombre,
@@ -22,6 +23,17 @@ const Contact = () => {
             Empresa: userData.Empresa,
             mensaje: userData.mensaje
         };
+        await axios.post('http://localhost:8000/sendEmail/email', NuevoEmail);
+        alert('Mensaje Enviado con exito')
+
+        setUserData({
+            nombre: "",
+            email: "",
+            phone: 0,
+            Empresa: "",
+            mensaje: ""
+
+        })
     };
     const handleChange = (event) => {
         setUserData({
@@ -29,9 +41,11 @@ const Contact = () => {
             [event.target.name]: event.target.value,
         });
     }
-    console.log(userData)
+    
     return (
         <div className="container-Contact">
+            <h2>
+                Need help with a project? Contact me, I'm at your service.</h2>
             <form onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="nombre">Nombre:</label>

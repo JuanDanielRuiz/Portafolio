@@ -3,6 +3,7 @@ footer {
     background-color: #545B77;
     color: #fff;
     padding: 40px 0;
+    
 }
 
 
@@ -50,4 +51,8 @@ footer {
     text-align: center;
     font-weight: bold; /* Agregamos negrita */
     margin-bottom: 20px; /* Agregamos margen inferior */
+}
+.icons-footer img{
+    width:45px;
+    border-radius:1rem
 }
