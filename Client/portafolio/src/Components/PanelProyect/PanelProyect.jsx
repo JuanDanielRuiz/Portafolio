@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 
 
 const ProyectosForm = () => {
-    const [data, setData] = useState([]);
+    const [data, setData] = useState([]); 
 
     useEffect(() => {
         // Función para realizar la petición
@@ -24,7 +24,7 @@ const ProyectosForm = () => {
             axios
                 .delete(`http://localhost:3001/deleteProyect/delete/${id}`)
                 .then();
-            alert("Felicidades se Elimino El proyecto con exito")
+           
             const updatedData = data.filter((item) => item.id !== id);
             setData(updatedData);
         } catch (error) {
@@ -44,7 +44,6 @@ const ProyectosForm = () => {
     });
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
         const Nuevoproyecto = {
             name: proyectoData.name,
             repo: proyectoData.repo,
@@ -53,8 +52,8 @@ const ProyectosForm = () => {
             linkedin: proyectoData.linkedin
         };
 
-        const response = await axios.post('http://localhost:3001/CreateProyect/data', Nuevoproyecto);
-        alert("Felicidades Proyecto Nuevo Desbloqueado")
+        await axios.post('http://localhost:3001/CreateProyect/data', Nuevoproyecto);
+      
         setProyectoData({
             name: "",
             repo: "",
@@ -74,80 +73,102 @@ const ProyectosForm = () => {
     console.log(proyectoData)
 
     return (
-        <div className="form-container">
-            <h2>Agregar Proyecto</h2>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label htmlFor="name">Nombre:</label>
-                    <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        value={proyectoData.name}
-                        onChange={handleChange}
-                    />
-                </div>
-                <div>
-                    <label htmlFor="repo">Repo:</label>
-                    <input
-                        type="text"
-                        id="repo"
-                        name="repo"
-                        value={proyectoData.repo}
-                        onChange={handleChange}
-                    />
-                </div>
-                <div>
-                    <label htmlFor="img">Imagen:</label>
-                    <input
-                        type="text"
-                        id="img"
-                        name="img"
-                        value={proyectoData.img}
-                        onChange={handleChange}
-                    />
-                </div>
-                <div>
-                    <label htmlFor="description">Descripcion:</label>
-                    <textarea
-                        id="description"
-                        name="description"
-                        value={proyectoData.description}
-                        onChange={handleChange}
-                    ></textarea>
-                </div>
-                <div>
-                    <label htmlFor="linkedin">LinkedIn:</label>
-                    <input
-                        type="text"
-                        id="linkedin"
-                        name="linkedin"
-                        value={proyectoData.linkedin}
-                        onChange={handleChange}
-                    />
-                </div>
-                <button class="PanelEnviar" type="submit">Guardar</button>
-            </form>
-            <div class="container-Proyectos-panel">
+        <div className="container-fluid formulario">       
+                <div class="row">
+                <div class="col-3 order-firt contenedor-form">
+                    <h2>Agregar Proyecto</h2>
+                    <div class="Formulairo-tetx">
+                    <form  onSubmit={handleSubmit}>
+                        <div>
+                            <label htmlFor="name">Nombre:</label>
+                            <input class="form-control form-control-sm" type="text" placeholder=".form-control-sm" aria-label=".form-control-sm example"
+                                id="name"
+                                name="name"
+                                value={proyectoData.name}
+                                onChange={handleChange}
 
-
-
-
-                {data.map((item) => (
-                    <div className="proyecto-card" key={item.id}>
-                        <button class="delete" onClick={() => handlerDeleteProyect(item.id)}>Delete Proyect</button>
-                        <h2 className="proyecto-title-panel">{item.name}</h2>
-                        <p className="proyecto-description-panel">{item.description}</p>
-                        <img className="proyecto-img-panel" src={item.img} alt="Project" />
-                        <a className="proyecto-linkedin" href={item.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                        <a className="proyecto-repo" href={item.repo} target="_blank" rel="noopener noreferrer">Repositorio</a>
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor="repo">Repo:</label>
+                            <input class="form-control form-control-sm" placeholder=".form-control-sm" aria-label=".form-control-sm example"
+                                type="text"
+                                id="repo"
+                                name="repo"
+                                value={proyectoData.repo}
+                                onChange={handleChange}
+                            />
+                        </div>
+                            <div class="mb-3">
+                                <label htmlFor="img">Imagen URL:</label>
+                                <input class="form-control form-control-sm" placeholder=".form-control-sm" aria-label=".form-control-sm example"
+                                    
+                                    name="img"
+                                    value={proyectoData.img}
+                                    onChange={handleChange}/>
+                            </div>
+                          
+                        <div>
+                            <label htmlFor="description">Descripcion:</label>
+                            <textarea
+                                id="description"
+                                name="description"
+                                value={proyectoData.description}
+                                onChange={handleChange}
+                            ></textarea>
+                        </div>
+                        <div>
+                            <label htmlFor="linkedin">LinkedIn:</label>
+                            <input class="form-control form-control-sm" type="text" placeholder=".form-control-sm" aria-label=".form-control-sm example"
+                                
+                                id="linkedin"
+                                name="linkedin"
+                                value={proyectoData.linkedin}
+                                onChange={handleChange}
+                            />
+                        </div>
+                        <button class="PanelEnviar" type="submit">Guardar</button>
+                        </form>
                     </div>
+                </div>
+                    
+           
+                <div class="col-9 order-last proyecto">
+                   
+
+                    {data.map((item) => (
+                        <table class="table table-dark table-sm">
+                        <thead>
+                            <tr>
+                               <th scope='col'>Id</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Repositorio</th>
+                                <th scope="col">Imagen url</th>
+                                <th scope="col">Descripcion</th>
+                                    <th scope="col">Linkedin</th>
+                                    <th scope="col">Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">{item.id}</th>
+                                <td>{item.name}</td>
+                                <td>{item.repo}</td>
+                                <td>{item.img}</td>
+                                <td>{item.description}</td>
+                                    <td>{item.linkedin}</td>
+                                    <td><button onClick={() => handlerDeleteProyect(item.id)}>Eliminar</button></td>
+                            </tr>
+                           
+                        </tbody>
+                    </table>
+                    ))}
 
 
 
 
-                ))}
 
+                </div>
             </div>
             
         </div>

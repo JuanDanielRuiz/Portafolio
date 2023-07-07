@@ -15,7 +15,7 @@ body {
     height: 100vh;
 }
 
-form {
+.form {
     
     width: 400px;
     margin: 0 auto;
@@ -34,7 +34,7 @@ form {
 
 }
 
-    form div {
+    .form div {
         margin-bottom: 20px;
     }
 
