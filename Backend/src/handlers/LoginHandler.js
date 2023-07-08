@@ -2,28 +2,26 @@ const { login } = require('../controllers/Loginadmin')
 
 
 const LoginHandler = async (req, res) => {
-    const { password,
-        emailPost } = req.body;
+    const { passwordlogin,
+        username } = req.body;
 
 
 
     try {
 
-        const result = login(
-            {
-                emailPost,
-                password
-               
-            })
-        if (result.error) {
-            res.status(404).json(result);
-        } else {
+        const result = await login(username, passwordlogin)
 
-            res.status(200).json({ loginsuccess: result });
+       
+
+        if (result.error) {
+            res.status(404).json({ Session: "No inicio session correctamente", result });
+        } else {
+            res.set('Set-Cookie', result.cookie);
+            res.status(200).json({ Session: "Se inicio session correctamente", result });
         }
     } catch (error) {
 
-        res.status(400).json({ message: error.message })
+        res.status(500).json({ message: error.message })
 
     }
 }

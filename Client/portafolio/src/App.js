@@ -8,6 +8,8 @@ import Contact from "../src/Components/Contacto/Contact";
 import ProyectosForm from "../src/Components/PanelProyect/PanelProyect";
 import Proyectos from "../src/Components/Proyectos/Proyectos";
 import LoginForm from "../src/Components/LoginAdmin/LoginAdmin"
+import AboutMe from "../src/Components/SobreMi/SobreMi"
+
 
 
 function App() {
@@ -20,6 +22,7 @@ function App() {
               <Route path="/admin/proyect" element={<ProyectosForm />} />
               <Route path="/proyectos" element={<Proyectos />} />
               <Route path="/admin" element={<LoginForm />} />
+              <Route path="/about" element={<AboutMe />} />
           </Routes>
           <Footer/>
      

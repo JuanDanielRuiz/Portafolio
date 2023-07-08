@@ -34,13 +34,13 @@ const newUserAdmin = async ({
      
     });
 
-    // Guardamos el usuario que antes creamos con todos los valores.
+      // Guardamos el usuario que antes creamos con todos los valores.
+      if (newUser.dataValues.email) throw new Error(`El email ${newUser.dataValues.email} ya esta registrado`);
     const savedUser = await newUser.save();
     // Retornamos el nuevo usuario.
     return savedUser;
   } catch (error) {
-    console.log(error.message);
-    throw new Error({ error: error.message });
+    throw new Error(error.message);
   }
 };
 

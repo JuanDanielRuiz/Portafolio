@@ -1,16 +1,48 @@
 import React, { useState } from 'react';
 import './StyleLoginAdmin.css'
+import axios from 'axios'
+import { useNavigate } from 'react-router-dom';
 
 
 const LoginForm = () => {
+    const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
+    const [loggedIn, setLoggedIn] = useState(false); 
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Lógica para enviar los datos del formulario
-        console.log('Email:', email);
-        console.log('Password:', password);
+        const login = {
+
+            username: email,
+            passwordlogin: password
+        }
+        
+        
+        try {
+            const response = await axios.post('http://localhost:8000/formLogin', login);
+            
+
+            // Si la respuesta es exitosa, establecer el estado loggedIn en true para redirigir
+            if (response.status === 200) {
+                setLoggedIn(true);
+                navigate('/admin/proyect')
+            } else if (response.status === 404) {
+                setError(response.data.Session.result.error);
+            } else if (response.status === 500) {
+                setError(response.data.Session.result.error);
+            }
+        } catch (e) {
+            setError(e.response.data.result.error);
+        }
+
+       
+    
+
+     
+        
+
     };
 
     return (
@@ -43,6 +75,8 @@ const LoginForm = () => {
                         </div>
                         <div className="text-center">
                             <button type="submit" className="btn btn-primary">Iniciar sesion</button>
+                            <br></br>
+                            {error ? <p>{error}</p> : null}
                         </div>
                     </form>
                 </div>

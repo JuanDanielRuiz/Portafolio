@@ -3,30 +3,35 @@ const { User } = require("../db");
 const { tokenSing } = require("./generateToken");
 const { HederCookie } = require("./generateToken");
 
-const login = async ({ emailPost,
-    password }) => {
-    console.log(emailPost)
+const login = async (username, passwordlogin) => {
     try {
         // Verificar si el usuario existe en la base de datos
-        const user = await User.findOne({ where: { email: emailPost } });
+        const user = await User.findOne({ where: { email: username } });
 
         if (!user) {
             return { error: "Usuario no encontrado" };
         }
 
         // Verificar la contraseña ingresada
-        if (!password || !user.password) {
-            return { error: "Contraseña no válida" };
+        if (!passwordlogin || !user.password) {
+            return { error: "Contrasena no valida" };
         }
 
-        const isPasswordMatch = bcrypt.compareSync(password, user.password);
+        const isPasswordMatch = bcrypt.compareSync(passwordlogin, user.password);
+
+       
 
         const tokenSession = await tokenSing(user);
 
+        
+
         const cookie = await HederCookie(tokenSession);
 
+       
+    
+
         if (!isPasswordMatch) {
-            return { error: "Contraseña incorrecta" };
+            return { error: "Contrasena incorrecta" };
         }
 
         const data = {
@@ -34,7 +39,7 @@ const login = async ({ emailPost,
             tokenSession,
             cookie,
         };
-
+        
         // Proceso de inicio de sesión exitoso
         return data;
     } catch (error) {

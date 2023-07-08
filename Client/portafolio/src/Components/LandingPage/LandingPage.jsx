@@ -1,13 +1,11 @@
 import './StyleLandingPage.css'
 import photo from './img/Presentacion.jpg'
-import backend from './img/backend.jpeg'
 import tecnology from './img/tecnologias.png'
 import ReactIcon from './icons/icons8-react-native.svg'
 import Javascript from './icons/icons8-javascript.svg'
 import Html from './icons/icons8-html-5.svg'
 import express from './icons/nodejs-svgrepo-com .svg'
 import postgres from './icons/postgresql-svgrepo-com.svg'
-import css from './icons/icons8-css3 (1).svg'
 import git from './icons/icons8-git.svg'
 import python from './icons/python-svgrepo-com.svg'
 import mongodb from './icons/mongodb-logo-svgrepo-com.svg'
@@ -28,7 +26,7 @@ const LandingPage = () => {
 
                     Hello! I'm Juan Daniel Luevano Ruiz, a passionate and experienced backend developer. I'm here to help you create robust and efficient technological solutions. If you're looking to optimize your processes and enhance user experience, you've come to the right place! Contact me and let's talk about your next project!
             </p>
-            <a download href="#"> <button class="download-cv">Download CV</button></a>
+            <a download href="/"> <button class="download-cv">Download CV</button></a>
             </main>
             </div>
             <section class="tecnology">

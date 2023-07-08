@@ -13,7 +13,7 @@ const Proyectos = () => {
         // Función para realizar la petición
         const fetchData = async () => {
             try {
-                const response = await axios.get('http://localhost:8000/CreateProyect/allData');
+                const response = await axios.get('http://localhost:8000/allData');
                 setData(response.data);
             } catch (error) {
                 console.error(error);
@@ -29,19 +29,23 @@ const Proyectos = () => {
 
     console.log(data)
     return (
-        <div class="container-Proyectos">
+        <div class="container-fluid proyectos">
           
                
            
            
             {data.map((item) => (
-                <div className="proyecto-card" key={item.id}>
-                    <h2 className="proyecto-title">{item.name}</h2>
-                    <p className="proyecto-description">{item.description}</p>
-                    <img className="proyecto-img" src={item.img} alt="Project" />
-                    <a className="proyecto-linkedin" href={item.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                    <a className="proyecto-repo" href={item.repo} target="_blank" rel="noopener noreferrer">Repositorio</a>
+                <div class="card" >
+                    <img src={item.img} class="card-img-top" alt="Project" />
+                <div class="card-body">
+                <h5 class="card-title">{item.name}</h5>
+                        <p class="card-text">{item.description}</p>
+                        <a href={item.linkedin} class="btn btn-primary">Linkedin</a>
+                        <a href={item.repo} class="btn btn-primary">Git Hub</a>
+                    </div>
+                    
                 </div>
+                
                 
                 
                 

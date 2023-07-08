@@ -23,7 +23,7 @@ const Contact = () => {
             Empresa: userData.Empresa,
             mensaje: userData.mensaje
         };
-        await axios.post('http://localhost:8000/sendEmail/email', NuevoEmail);
+        await axios.post('http://localhost:8000/email', NuevoEmail);
         alert('Mensaje Enviado con exito')
 
         setUserData({

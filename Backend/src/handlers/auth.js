@@ -1,4 +1,4 @@
-const checkAuth = require("../../controllers/UserControllers/auth");
+const checkAuth = require("../controllers/auth");
 
 const tokenHeader = async (req, res,next) => {
   try {
@@ -13,7 +13,7 @@ const tokenHeader = async (req, res,next) => {
     }
   } catch (error) {
     console.log(error);
-    res.status(500).json({error: error.message});
+      res.status(500).json({ error: "Lo siento Pero Necesitas un Token para realizar Esta accion Comunicate con el Administrador de la pagina" });
 
   }
 };

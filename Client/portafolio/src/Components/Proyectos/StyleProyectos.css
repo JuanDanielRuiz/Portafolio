@@ -12,83 +12,50 @@ body {
 }
 
 
-.container-Proyectos {
+.proyectos {
     background-color: #374259;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content:flex-start;
     min-height: 100vh;
+    
 }
-   
-
-    .proyecto-card {
-        margin-top: 2rem;
-        width: 30%;
-        margin: 1%;
-        padding: 1rem;
-        background-color: #ffffff;
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-
-.proyecto-title {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-    text-align:center
+.card{
+    width:18rem;
+    height:36rem;
+    margin-left:3.7rem;
+    margin-top:1rem
 }
-
-.proyecto-description {
-    margin-bottom: 1rem;
-    text-align: center
-}
-
-.proyecto-img {
-    width: 100%;
-    height: 18rem;
-    margin-bottom: 1rem;
-    border-radius: 5px;
-}
-.proyecto-card a {
-    display: flex;
-    justify-content: center;
-    margin-top: 1rem;
-}
-.proyecto-linkedin,
-.proyecto-repo {
-    margin-right: 0.5rem;
-    color: #ffffff;
-    text-decoration: none;
-    text-align: center;
-    border-radius: 2rem;
-    background-color: #98c7c0;
-    padding: 0.5rem 1rem;
-    margin: auto;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.8rem;
-    transition: background-color 0.3s ease;
-    margin-right:1rem;
+.card img{
+    width: 200px;
+    height:220px;
+    display:flex;
+    margin:auto;
+    border-radius:4rem;
+    background-color:transparent;
+    margin-top:2rem
     
 }
 
-    .proyecto-linkedin:hover,
-    .proyecto-repo:hover {
-        background-color: #72a5a0;
-        text-decoration: none;
-    }
-
-.delete {
-    background-color: darkred;
-    border: none; 
-    border-radius: 56rem;
-    padding: .5rem;
-    text-align: center;
-    width: 100%;
-    transition: background-color 0.3s; 
+.card-body a {
+    margin-top: 10px;
+    margin-left: 1rem;
+    display: inline-block;
+}
+.card-body h5 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 40px;
+    color: #7286D3
+}
+.card-body {
+    height: 200px;
+    overflow: auto;
+    display: flex;
+    float: left;
 }
 
-    .delete:hover {
-        background-color: red;
-    }
+.card-body p {
+    font-family: cursive;
+    font-size: 20px;
+    color: black;
+}
