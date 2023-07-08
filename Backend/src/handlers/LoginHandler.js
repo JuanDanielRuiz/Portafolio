@@ -3,7 +3,7 @@ const { login } = require('../controllers/Loginadmin')
 
 const LoginHandler = async (req, res) => {
     const { password,
-        email} = req.body;
+        emailPost } = req.body;
 
 
 
@@ -11,7 +11,7 @@ const LoginHandler = async (req, res) => {
 
         const result = login(
             {
-                email,
+                emailPost,
                 password
                
             })

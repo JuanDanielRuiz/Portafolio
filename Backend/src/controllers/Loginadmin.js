@@ -3,22 +3,23 @@ const { User } = require("../db");
 const { tokenSing } = require("./generateToken");
 const { HederCookie } = require("./generateToken");
 
-const login = async (email,
-    password) => {
+const login = async ({ emailPost,
+    password }) => {
+    console.log(emailPost)
     try {
         // Verificar si el usuario existe en la base de datos
-        const user = await User.findOne({ where: { email: email } });
+        const user = await User.findOne({ where: { email: emailPost } });
 
         if (!user) {
             return { error: "Usuario no encontrado" };
         }
 
         // Verificar la contraseña ingresada
-        if (!passwordlogin || !user.password) {
+        if (!password || !user.password) {
             return { error: "Contraseña no válida" };
         }
 
-        const isPasswordMatch = bcrypt.compareSync(passwordlogin, user.password);
+        const isPasswordMatch = bcrypt.compareSync(password, user.password);
 
         const tokenSession = await tokenSing(user);
 
