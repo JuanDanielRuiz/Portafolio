@@ -1,6 +1,7 @@
 import './StyleProyectos.css'
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useMediaQuery } from 'react-responsive';
 
 
 
@@ -28,8 +29,13 @@ const Proyectos = () => {
    
 
     console.log(data)
+    const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
     return (
+       
         <div class="container-fluid proyectos">
+            {isMobile && (
+                <p style={{ color: 'red', fontSize: '30px', background: '#374259', margin: 0, padding: '10px' }}>Esta pagina solo esta disponible en version web. La version movil esta en creacion.</p>
+            )}
           
                
            
@@ -51,6 +57,14 @@ const Proyectos = () => {
                 
 
             ))}
+            {data.length === 0 ? <h3 style={{
+                color: 'white',
+                padding: '20px',
+                margin:'auto',
+                textAlign: 'center',
+                fontWeight: 'bold',
+                textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)',
+            }}>Lo siento por el Momento no Existen proyectos.</h3> : null}
            
         </div>
 

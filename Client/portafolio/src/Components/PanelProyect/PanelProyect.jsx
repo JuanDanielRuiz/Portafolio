@@ -1,15 +1,25 @@
 import './StylePanelProyect.css'
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { useMediaQuery } from 'react-responsive';
+import { useNavigate } from 'react-router-dom';
 
 
 const ProyectosForm = () => {
+   
+    const navigate = useNavigate();
+    const [user, setUser] = useState(null); 
     const [data, setData] = useState([]); 
 
     useEffect(() => {
         // Función para realizar la petición
         const fetchData = async () => {
             try {
+                const userLoginLocalStorage = window.localStorage.getItem('login')
+                if (userLoginLocalStorage) {
+                    const user = JSON.parse(userLoginLocalStorage)
+                    setUser(user)
+                } 
                 const response = await axios.get('http://localhost:8000/allData');
                 setData(response.data);
             } catch (error) {
@@ -19,10 +29,21 @@ const ProyectosForm = () => {
 
         fetchData();
     }, []);
+    if (!user || user.name === null) {
+        navigate("/admin")
+    }
     const handlerDeleteProyect = (id) => {
         try {
+            const token = user.tokenSession;
+            console.log("soy el token", token)
+
+            const config = {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            };
             axios
-                .delete(`http://localhost:8000/delete/${id}`)
+                .delete(`http://localhost:8000/delete/${id}`,config)
                 .then();
            
             const updatedData = data.filter((item) => item.id !== id);
@@ -52,7 +73,15 @@ const ProyectosForm = () => {
             linkedin: proyectoData.linkedin
         };
 
-        await axios.post('http://localhost:8000/data', Nuevoproyecto);
+        const token = user.tokenSession;
+        console.log("soy el token",token)
+
+        const config = {
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+        };
+        await axios.post('http://localhost:8000/data', Nuevoproyecto,config);
       
         setProyectoData({
             name: "",
@@ -70,12 +99,22 @@ const ProyectosForm = () => {
             [event.target.name]: event.target.value,
         });
     };
-    console.log(proyectoData)
-
+    const handlerLogout = () => {
+        window.localStorage.removeItem('login');
+        navigate('/admin');
+    }
+    
+    const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
     return (
-        <div className="container-fluid formulario">       
+      
+        <div className="container-fluid formulario"> 
+            {isMobile && (
+                <p style={{ color: 'red', fontSize: '30px', background: '#374259', margin: 0, padding: '10px' }}>Esta pagina solo esta disponible en version web. La version movil esta en creacion.</p>
+            )}
+      
                 <div class="row">
                 <div class="col-3 order-firt contenedor-form">
+                    <button onClick={() => handlerLogout()} class="logout" type="button">Cerrar session</button>
                     <h2>Agregar Proyecto</h2>
                     <div class="Formulairo-tetx">
                     <form  onSubmit={handleSubmit}>

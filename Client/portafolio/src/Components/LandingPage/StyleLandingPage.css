@@ -116,7 +116,7 @@
     
     .photo:hover img {
         transform: rotateY(180deg);
-        transition:ease-in 5s;
+        transition:ease-in 2s;
         border:solid 5px red
     }
 .ciberseguridad {

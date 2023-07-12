@@ -1,10 +1,16 @@
 import React from 'react';
 import './StyleSobreMi.css';
 import { FaCode, FaServer, FaDatabase, FaPython } from 'react-icons/fa';
+import { useMediaQuery } from 'react-responsive';
 
 const AboutMe = () => {
+    const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
     return (
+      
         <section className="sobre-mi">
+            {isMobile && (
+                <p style={{ color: 'red', fontSize: '30px', background: '#374259', margin: 0, padding: '10px' }}>Esta pagina solo esta disponible en version web. La version movil esta en creacion.</p>
+            )}
             <h2 className="section-title">Sobre mi</h2>
             <div className="content">
                 <h3 className="skill-title">Backend Development</h3>

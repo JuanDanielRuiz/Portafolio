@@ -1,16 +1,16 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Client",
+    "\\Backend",
+    "\\Backend\\src",
+    "\\Backend\\src\\controllers",
+    "\\Backend\\src\\models",
     "\\Client\\portafolio",
     "\\Client\\portafolio\\src",
     "\\Client\\portafolio\\src\\Components",
-    "\\Client\\portafolio\\src\\Components\\Contacto\\img",
-    "\\Client\\portafolio\\src\\Components\\LandingPage\\img",
-    "\\Client\\portafolio\\src\\Components\\PanelProyect",
-    "\\Client\\portafolio\\src\\Components\\PanelProyect\\img",
-    "\\Client\\portafolio\\src\\Components\\Proyectos"
+    "\\Client\\portafolio\\src\\Components\\LoginAdmin",
+    "\\Client\\portafolio\\src\\Components\\LoginAdmin\\img"
   ],
-  "SelectedNode": "\\Client\\portafolio\\src\\Components\\Proyectos\\Proyectos.jsx",
+  "SelectedNode": "\\Backend\\src\\controllers\\createAdmin.js",
   "PreviewInSolutionExplorer": false
 }

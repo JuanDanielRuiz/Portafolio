@@ -56,3 +56,23 @@
         overflow: hidden; 
         text-overflow: ellipsis; 
     }
+
+.PanelEnviar {
+    color: black;
+    background-color: aqua;
+    border-radius: 1rem;
+    padding: 5px;
+    margin-top: 40px;
+    width: 100%;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+.logout {
+    color: black;
+    background-color: red;
+    border-radius: 1rem;
+    padding: 5px;
+    margin-top: 40px;
+    width: 100%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}

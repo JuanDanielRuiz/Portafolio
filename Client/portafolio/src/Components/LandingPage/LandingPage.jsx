@@ -9,11 +9,19 @@ import postgres from './icons/postgresql-svgrepo-com.svg'
 import git from './icons/icons8-git.svg'
 import python from './icons/python-svgrepo-com.svg'
 import mongodb from './icons/mongodb-logo-svgrepo-com.svg'
+import { useMediaQuery } from 'react-responsive';
+
+
 
 
 const LandingPage = () => {
+    const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
+
     return (
         <div >
+            {isMobile && (
+                <p style={{ color: 'red', fontSize: '30px', background: '#374259', margin: 0, padding: '10px' }}>Esta pagina solo esta disponible en version web. La version movil esta en creacion.</p>
+            )}
             <div class="container-fluid landing">
             <div class="col order-last photo">
                 <img src={photo} alt="Imagen de presentacion de Danny Ruiz"></img>
@@ -26,7 +34,7 @@ const LandingPage = () => {
 
                     Hello! I'm Juan Daniel Luevano Ruiz, a passionate and experienced backend developer. I'm here to help you create robust and efficient technological solutions. If you're looking to optimize your processes and enhance user experience, you've come to the right place! Contact me and let's talk about your next project!
             </p>
-            <a download href="/"> <button class="download-cv">Download CV</button></a>
+                    <a download href="https://drive.google.com/file/d/15nK4pYRRhdLtHWdjviYhtEDtUmZUcjx_/view"> <button class="download-cv">Download CV</button></a>
             </main>
             </div>
             <section class="tecnology">

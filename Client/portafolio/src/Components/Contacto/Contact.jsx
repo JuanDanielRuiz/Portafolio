@@ -1,6 +1,7 @@
 import './StyleContact.css'
 import { useState } from "react";
 import axios from 'axios'
+import { useMediaQuery } from 'react-responsive';
 
 
 
@@ -41,9 +42,12 @@ const Contact = () => {
             [event.target.name]: event.target.value,
         });
     }
-    
+    const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
     return (
         <div className="container-Contact">
+            {isMobile && (
+                <p style={{ color: 'red', fontSize: '30px', background: '#374259', margin: 0, padding: '10px' }}>Esta pagina solo esta disponible en version web. La version movil esta en creacion.</p>
+            )}
             <h2>
                 Need help with a project? Contact me, I'm at your service.</h2>
             <form onSubmit={handleSubmit}>
