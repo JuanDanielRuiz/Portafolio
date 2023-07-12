@@ -11,7 +11,7 @@ const Proyectos = () => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        // Función para realizar la petición
+        
         const fetchData = async () => {
             try {
                 const response = await axios.get('http://localhost:8000/allData');
