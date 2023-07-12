@@ -5,14 +5,14 @@ const { HederCookie } = require("./generateToken");
 
 const login = async (username, passwordlogin) => {
     try {
-        // Verificar si el usuario existe en la base de datos
+       
         const user = await User.findOne({ where: { email: username } });
 
         if (!user) {
             return { error: "Usuario no encontrado" };
         }
 
-        // Verificar la contraseña ingresada
+       
         if (!passwordlogin || !user.password) {
             return { error: "Contrasena no valida" };
         }
@@ -40,7 +40,7 @@ const login = async (username, passwordlogin) => {
             cookie,
         };
         
-        // Proceso de inicio de sesión exitoso
+       
         return data;
     } catch (error) {
         console.error(error);
